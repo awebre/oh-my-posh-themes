@@ -5,15 +5,15 @@
       "alignment": "left",
       "segments": [
         {
-          "foreground": "cyan",
+          "foreground": "#9ea7b3",
           "style": "powerline",
           "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}}",
           "type": "os"
         },
         {
-          "foreground": "cyan",
+          "foreground": "#fbe59e",
           "properties": {
-            "style": "full"
+            "style": "agnoster"
           },
           "style": "plain",
           "template": " {{ .Path }} ",
@@ -35,19 +35,13 @@
       "alignment": "right",
       "segments": [
         {
-          "foreground": "red",
+          "foreground": "#e82a2f",
           "style": "plain",
           "template": "| root ",
           "type": "root"
         },
         {
-          "foreground": "#06A4CE",
-          "style": "powerline",
-          "template": "| \ue798 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
-          "type": "dart"
-        },
-        {
-          "foreground": "#6CA35E",
+          "foreground": "#acf7b6",
           "style": "powerline",
           "template": "|{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}{{ else }}\ue718{{ end }} {{ .Full }} ",
           "type": "node",
@@ -56,38 +50,29 @@
           }
         },
         {
-          "foreground": "#4584b6",
-          "properties": {
-            "display_mode": "context",
-            "fetch_virtual_env": true
-          },
-          "style": "plain",
-          "template": "| \ue235 {{ .Venv }} ",
-          "type": "python"
-        },
-        {
-          "foreground": "#7160e8",
+          "foreground": "#cb9eff",
           "type": "dotnet",
           "style": "plain",
           "template": "| \ue70c {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} "
         },
         {
           "foreground_templates": [
-            "{{if eq \"Charging\" .State.String}}#4caf50{{end}}",
-            "{{if eq \"Discharging\" .State.String}}#40c4ff{{end}}",
-            "{{if eq \"Full\" .State.String}}#ff0000{{end}}"
+            "{{if eq \"Charging\" .State.String}}#26cd4d{{end}}",
+            "{{if eq \"Discharging\" .State.String}}#f0b72f{{end}}",
+            "{{if eq \"Full\" .State.String}}#9ea7b3{{end}}"
           ],
           "invert_powerline": true,
           "properties": {
-            "charged_icon": "\uf00d ",
-            "charging_icon": "\ue234 "
+            "charged_icon": "\uf578 ",
+            "charging_icon": "\uf583 ",
+            "discharging_icon": "\uf57d "
           },
           "style": "powerline",
           "template": "| {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }} \uf295 ",
           "type": "battery"
         },
         {
-          "foreground": "lightGreen",
+          "foreground": "#71b7ff",
           "style": "plain",
           "template": "| {{ .CurrentDate | date .Format }} ",
           "type": "time"
@@ -100,7 +85,7 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "lightGreen",
+          "foreground": "#71b7ff",
           "foreground_templates": ["{{ if gt .Code 0 }}red{{ end }}"],
           "properties": {
             "always_enabled": true
