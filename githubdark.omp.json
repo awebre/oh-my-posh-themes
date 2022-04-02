@@ -8,7 +8,10 @@
           "foreground": "#9ea7b3",
           "style": "powerline",
           "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}}",
-          "type": "os"
+          "type": "os",
+          "properties": {
+            "macos": "\ufb32"
+          }
         },
         {
           "foreground": "#fbe59e",
@@ -25,7 +28,7 @@
             "fetch_status": true
           },
           "style": "plain",
-          "template": ":: {{ .HEAD }}{{ .BranchStatus }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }} ",
+          "template": "\uf1d3 {{ .HEAD }}{{ .BranchStatus }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }} ",
           "type": "git"
         }
       ],
@@ -43,10 +46,11 @@
         {
           "foreground": "#acf7b6",
           "style": "powerline",
-          "template": "|{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}{{ else }}\ue718{{ end }} {{ .Full }} ",
+          "template": "| {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}{{ else }}\ue718{{ end }} {{ .Full }} ",
           "type": "node",
           "properties": {
-            "fetch_package_manager": true
+            "fetch_package_manager": true,
+            "npm_icon": "\ufbf5"
           }
         },
         {
@@ -74,7 +78,7 @@
         {
           "foreground": "#71b7ff",
           "style": "plain",
-          "template": "| {{ .CurrentDate | date .Format }} ",
+          "template": "| {{ .CurrentDate | date .Format }} \uf113",
           "type": "time"
         }
       ],
@@ -91,7 +95,7 @@
             "always_enabled": true
           },
           "style": "powerline",
-          "template": "\u279c ",
+          "template": "\ufb0c ",
           "type": "exit"
         }
       ],
