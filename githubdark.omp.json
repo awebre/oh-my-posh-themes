@@ -46,11 +46,11 @@
         {
           "foreground": "#acf7b6",
           "style": "powerline",
-          "template": "| {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}{{ else }}\ue718{{ end }} {{ .Full }} ",
+          "template": "|{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}{{ else }}\ue718{{ end }} {{ .Full }} ",
           "type": "node",
           "properties": {
             "fetch_package_manager": true,
-            "npm_icon": "\ufbf5"
+            "npm_icon": " \ufbf5"
           }
         },
         {
@@ -60,19 +60,28 @@
           "template": "| \ue70c {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} "
         },
         {
+          "type": "sysinfo",
+          "style": "powerline",
+          "foreground_templates": [
+            "{{if lt .Load1 5.0 }}#caeaff{{end}}",
+            "{{if gt .Load1 5.0 }}#e7811d{{end}}"
+          ],
+          "invert_powerline": true,
+          "template": "| \uf2db {{ if lt .Load1 5.0 }}\ufc15{{ end }}{{ if gt .Load1 5.0}}{{ round .Load1 2 }}\uf295 \ue3bf{{end}} "
+        },
+        {
           "foreground_templates": [
             "{{if eq \"Charging\" .State.String}}#26cd4d{{end}}",
             "{{if eq \"Discharging\" .State.String}}#f0b72f{{end}}",
             "{{if eq \"Full\" .State.String}}#9ea7b3{{end}}"
           ],
-          "invert_powerline": true,
           "properties": {
             "charged_icon": "\uf578 ",
             "charging_icon": "\uf583 ",
             "discharging_icon": "\uf57d "
           },
-          "style": "powerline",
-          "template": "| {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }} \uf295 ",
+          "style": "plain",
+          "template": "| {{ if not .Error }}{{ .Icon }}{{ if lt .Percentage 50 }}{{ .Percentage }} \uf295 {{ end }}{{ end }}{{ .Error }}",
           "type": "battery"
         },
         {
@@ -90,7 +99,7 @@
       "segments": [
         {
           "foreground": "#71b7ff",
-          "foreground_templates": ["{{ if gt .Code 0 }}red{{ end }}"],
+          "foreground_templates": ["{{ if gt .Code 0 }}#e82a2f{{ end }}"],
           "properties": {
             "always_enabled": true
           },
