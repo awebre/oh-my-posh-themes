@@ -42,13 +42,17 @@
           "type": "text",
           "foreground": "#ffffff",
           "style": "powerline",
-          "template": "{{.UserName}}"
+          "templates_logic": "first_match",
+          "templates": [
+            "{{ if .SSHSession }}{{ .UserName }}{{ end }}",
+            "{{ .UserName }} "
+          ]
         },
         {
-          "type": "text",
+          "type": "session",
           "foreground": "#9ea7b3",
           "style": "powerline",
-          "template": "@{{.HostName}} "
+          "template": "{{ if .SSHSession }}@{{ .HostName }}{{ end }} "
         },
         {
           "foreground": "#e82a2f",
