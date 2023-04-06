@@ -74,7 +74,7 @@
           "type": "dotnet",
           "style": "powerline",
           "powerline_symbol": "\udb86\udd62",
-          "template": " \ue70c {{ if .Unsupported }}\uf071{{ else }} {{ .Full }}{{ end }} "
+          "template": " \ue70c{{ if .Unsupported }}\uf071{{ else }} {{ .Full }}{{ end }} "
         },
         {
           "type": "sysinfo",
