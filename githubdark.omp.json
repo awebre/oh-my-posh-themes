@@ -81,6 +81,13 @@
           "template": " \ue70c{{ if .Unsupported }}\uf071{{ else }} {{ .Full }}{{ end }} "
         },
         {
+          "type": "az",
+          "style": "powerline",
+          "powerline_symbol": "\udb86\udd62",
+          "foreground": "#9ec3f0",
+          "template": "  {{ .Name }} "
+        },
+        {
           "type": "sysinfo",
           "style": "powerline",
           "powerline_symbol": "\udb86\udd62",
@@ -88,7 +95,7 @@
             "{{if lt .Load1 5.0 }}#caeaff{{end}}",
             "{{if gt .Load1 5.0 }}#e7811d{{end}}"
           ],
-          "template": " \uf2db {{ if lt .Load1 5.0 }}\ufc15{{ end }}{{ if gt .Load1 5.0}}{{ round .Load1 2 }} \uf295 \ue3bf{{end}} "
+          "template": " \uf2db {{ if lt .Load1 5.0 }}\udb81\udf17{{ end }}{{ if gt .Load1 5.0}}{{ round .Load1 2 }} \uf295 \ue3bf{{end}} "
         },
         {
           "foreground_templates": [
@@ -124,13 +131,15 @@
       "segments": [
         {
           "foreground": "#71b7ff",
-          "foreground_templates": ["{{ if gt .Code 0 }}#e82a2f{{ end }}"],
+          "foreground_templates": [
+            "{{ if .Error }}#e82a2f{{ end }}"
+          ],
           "properties": {
             "always_enabled": true
           },
           "style": "powerline",
-          "template": "\ufb0c ",
-          "type": "exit"
+          "template": "\udb81\ude0d ",
+          "type": "status"
         }
       ],
       "type": "prompt"
