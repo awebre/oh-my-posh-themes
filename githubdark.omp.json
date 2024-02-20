@@ -74,6 +74,17 @@
           }
         },
         {
+          "foreground": "#acf7b6",
+          "style": "powerline",
+          "template": " {{ .Major }} ",
+          "type": "react",
+          "properties": {
+            "fetch_package_manager": true,
+            "npm_icon": "\ufbf5",
+            "yarn_icon": "\ue6a7"
+          }
+        },
+        {
           "foreground": "#cb9eff",
           "type": "dotnet",
           "style": "powerline",
@@ -131,9 +142,7 @@
       "segments": [
         {
           "foreground": "#71b7ff",
-          "foreground_templates": [
-            "{{ if .Error }}#e82a2f{{ end }}"
-          ],
+          "foreground_templates": ["{{ if .Error }}#e82a2f{{ end }}"],
           "properties": {
             "always_enabled": true
           },
