@@ -11,7 +11,7 @@
           "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}}",
           "type": "os",
           "properties": {
-            "macos": "\ufb32"
+            "macos": "\uf0633"
           }
         },
         {
@@ -69,7 +69,7 @@
           "type": "node",
           "properties": {
             "fetch_package_manager": true,
-            "npm_icon": "\ufbf5",
+            "npm_icon": "\uf06f7",
             "yarn_icon": "\ue6a7"
           }
         },
@@ -80,7 +80,7 @@
           "type": "react",
           "properties": {
             "fetch_package_manager": true,
-            "npm_icon": "\ufbf5",
+            "npm_icon": "\uf06f7",
             "yarn_icon": "\ue6a7"
           }
         },
@@ -116,10 +116,10 @@
             "#f0b72f"
           ],
           "properties": {
-            "charged_icon": "\uf578 ",
-            "charging_icon": "\uf583 ",
-            "discharging_icon": "\uf57d ",
-            "not_charging_icon": "\uf590 ",
+            "charged_icon": "\uf0079 ",
+            "charging_icon": "\uf0084 ",
+            "discharging_icon": "\uf007e ",
+            "not_charging_icon": "\uf0083 ",
             "display_error": true
           },
           "style": "powerline",
