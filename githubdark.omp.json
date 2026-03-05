@@ -8,18 +8,18 @@
         {
           "properties": {
             "cache_duration": "none",
-            "macos": "\udb81\ude33"
+            "macos": "\uf179"
           },
           "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}}",
           "foreground": "#9ea7b3",
           "type": "os",
-          "style": "powerline"
+          "style": "plain"
         },
         {
           "properties": {
             "cache_duration": "none",
             "mapped_shell_names": {
-              "pwsh": "\udb81\udea8 pwsh",
+              "pwsh": "\uf120 pwsh",
               "zsh": "\ue795 zsh"
             }
           },
@@ -62,84 +62,79 @@
           "foreground": "#ffffff",
           "templates_logic": "first_match",
           "type": "text",
-          "style": "powerline",
+          "style": "plain",
           "templates": [
             "{{ if .SSHSession }}{{ .UserName }}{{ end }}",
-            "{{ .UserName }} "
+            "{{ .UserName }}"
           ]
         },
         {
           "properties": {
             "cache_duration": "none"
           },
-          "template": "{{ if .SSHSession }}@{{ .HostName }}{{ end }} ",
+          "template": "{{ if .SSHSession }} @{{ .HostName }}{{ end }}",
           "foreground": "#9ea7b3",
           "type": "session",
-          "style": "powerline"
+          "style": "plain"
         },
         {
           "properties": {
             "cache_duration": "none"
           },
-          "template": " root ",
+          "template": " | root",
           "foreground": "#e82a2f",
-          "powerline_symbol": "\udb86\udd62",
           "type": "root",
-          "style": "powerline"
+          "style": "plain"
         },
         {
           "properties": {
             "cache_duration": "none",
             "fetch_package_manager": true,
-            "npm_icon": "\udb81\udef7",
+            "npm_icon": "\ue71e",
             "yarn_icon": "\ue6a7"
           },
-          "template": " {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}{{ else }}\ue718{{ end }} {{ .Full }} ",
+          "template": " | {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}{{ else }}\ue718{{ end }} {{ .Full }}",
           "foreground": "#acf7b6",
-          "powerline_symbol": "\udb86\udd62",
           "type": "node",
-          "style": "powerline"
+          "style": "plain"
         },
         {
           "properties": {
             "cache_duration": "none",
             "fetch_package_manager": true,
-            "npm_icon": "\udb81\udef7",
+            "npm_icon": "\ue71e",
             "yarn_icon": "\ue6a7"
           },
-          "template": "\ue7ba {{ .Major }} ",
+          "template": " | \ue7ba {{ .Major }}",
           "foreground": "#acf7b6",
           "type": "react",
-          "style": "powerline"
+          "style": "plain"
         },
         {
           "properties": {
             "cache_duration": "none"
           },
-          "template": " \ue70c{{ if .Unsupported }}\uf071{{ else }} {{ .Full }}{{ end }} ",
+          "template": " | \ue70c{{ if .Unsupported }}\uf071{{ else }} {{ .Full }}{{ end }}",
           "foreground": "#cb9eff",
-          "powerline_symbol": "\udb86\udd62",
           "type": "dotnet",
-          "style": "powerline"
+          "style": "plain"
         },
         {
           "properties": {
             "cache_duration": "none"
           },
-          "template": " \uebd8 {{ .Name }} ",
+          "template": " | \uebd8 {{ .Name }}",
           "foreground": "#9ec3f0",
-          "powerline_symbol": "\udb86\udd62",
           "type": "az",
-          "style": "powerline"
+          "style": "plain"
         },
         {
           "properties": {
             "cache_duration": "none"
           },
-          "template": " \uf2db {{ if lt .Load1 5.0 }}\udb81\udf17{{ end }}{{ if gt .Load1 5.0}}{{ round .Load1 2 }} \uf295 \ue3bf{{end}} ",
-          "powerline_symbol": "\udb86\udd62",
+          "template": " | \uf2db \uf0e7",
           "type": "sysinfo",
-          "style": "powerline",
+          "style": "plain",
           "foreground_templates": [
             "{{if lt .Load1 5.0 }}#caeaff{{end}}",
             "{{if gt .Load1 5.0 }}#e7811d{{end}}"
@@ -148,16 +143,15 @@
         {
           "properties": {
             "cache_duration": "none",
-            "charged_icon": "\udb80\udc79 ",
-            "charging_icon": "\udb80\udc84 ",
-            "discharging_icon": "\udb80\udc7e ",
+            "charged_icon": "\uf240 ",
+            "charging_icon": "\uf0e7 ",
+            "discharging_icon": "\uf242 ",
             "display_error": true,
-            "not_charging_icon": "\udb80\udc91 "
+            "not_charging_icon": "\uf244 "
           },
-          "template": " {{ if not .Error }}{{ .Icon }}{{ if lt .Percentage 50 }}{{ .Percentage }} \uf295 {{ end }}{{ end }}{{ .Error }}",
-          "powerline_symbol": "\udb86\udd62",
+          "template": " | {{ if not .Error }}{{ .Icon }}{{ if lt .Percentage 50 }}{{ .Percentage }} \uf295 {{ end }}{{ end }}{{ .Error }}",
           "type": "battery",
-          "style": "powerline",
+          "style": "plain",
           "foreground_templates": [
             "{{if eq \"Charging\" .State.String}}#26cd4d{{end}}",
             "{{if eq \"Discharging\" .State.String}}#f0b72f{{end}}",
@@ -169,7 +163,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": " {{ .CurrentDate | date .Format }} \uf113",
+          "template": " | {{ .CurrentDate | date .Format }} \uf113",
           "foreground": "#71b7ff",
           "type": "time",
           "style": "plain"
@@ -188,7 +182,7 @@
           "template": "\udb81\ude0d ",
           "foreground": "#71b7ff",
           "type": "status",
-          "style": "powerline",
+          "style": "plain",
           "foreground_templates": [
             "{{ if .Error }}#e82a2f{{ end }}"
           ]
